@@ -4,13 +4,13 @@
 # ============================================
 
 # --- Stage 1: Builder ---
-FROM rust:1.82-bookworm AS builder
+FROM rust:1-bookworm AS builder
 
 # Install WASM target
 RUN rustup target add wasm32-unknown-unknown
 
 # Install cargo-leptos
-RUN cargo install --locked cargo-leptos
+RUN cargo install cargo-leptos
 
 WORKDIR /app
 
