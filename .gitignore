@@ -1,0 +1,7 @@
+/target/
+/pkg/
+/dist/
+**/*.rs.bk
+.env
+.DS_Store
+node_modules/
