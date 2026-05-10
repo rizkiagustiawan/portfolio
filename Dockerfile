@@ -49,7 +49,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Copy the server binary
-COPY --from=builder /app/target/server/release/rizkiagustiawan-tech ./server
+COPY --from=builder /app/target/release/rizkiagustiawan-tech ./server
 
 # Copy the site assets (JS/WASM/CSS/public)
 COPY --from=builder /app/target/site ./site
