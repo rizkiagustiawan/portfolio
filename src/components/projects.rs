@@ -109,7 +109,7 @@ pub fn Projects() -> impl IntoView {
                 />
                 <ProjectCard
                     mission="MISSION 06"
-                    title="NTB Methane Tracker - Geo ESG A.E.C.O"
+                    title="NTB Methane Tracker"
                     description="Real-time geospatial methane tracker featuring 3D terrain-aware Gaussian Plume dispersion, satellite STAC fusion, and dMRV carbon credit reporting."
                     stack="Rust, Axum, Tokio, PostGIS, Leaflet, Python, STAC API"
                     repo_url="https://github.com/rizkiagustiawan/methane-spatial-monitor-ntb"
