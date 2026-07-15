@@ -28,15 +28,24 @@ jobs:
       - name: Build Production Release
         run: cargo leptos build --release
 
-      - name: Deploy to VPS
+      - name: Deploy Binary and Site to VPS
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          source: "target/release/rizkiagustiawan-tech,target/site/,content/"
+          source: "target/release/rizkiagustiawan-tech,target/site/"
           target: "/home/admin/portfolio-deploy"
           strip_components: 1
+
+      - name: Deploy Blog Content to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "content/"
+          target: "/home/admin/portfolio-deploy"
 
       - name: Restart Server Service
         uses: appleboy/ssh-action@v1.0.3
