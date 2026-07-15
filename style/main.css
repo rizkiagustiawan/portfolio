@@ -861,7 +861,16 @@ img { max-width: 100%; display: block; }
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
-  .nav__links { display: none; }
+  .nav__links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav__inner {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
 
   .hero { padding: 5rem 1rem 3rem; }
   .hero__metrics { grid-template-columns: 1fr; gap: 1rem; }
