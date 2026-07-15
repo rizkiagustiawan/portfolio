@@ -22,11 +22,8 @@ jobs:
       - name: Setup Rust Cache
         uses: Swatinem/rust-cache@v2
 
-      - name: Install cargo-binstall
-        uses: cargo-bins/cargo-binstall@main
-
       - name: Install cargo-leptos
-        run: cargo binstall cargo-leptos -y
+        run: cargo install cargo-leptos --locked
 
       - name: Build Production Release
         run: cargo leptos build --release
