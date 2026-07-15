@@ -329,8 +329,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.75;
   max-width: 640px;
   margin: 0 auto 2.5rem;
-  text-align: center;
-  text-wrap: balance;
+  text-align: justify;
 }
 
 .hero__actions {
