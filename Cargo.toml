@@ -12,16 +12,24 @@ leptos_router = { version = "0.8" }
 leptos_meta = { version = "0.8" }
 leptos_axum = { version = "0.8", optional = true }
 axum = { version = "0.8", optional = true }
-tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
+tokio = { version = "1", features = ["rt-multi-thread", "macros"], optional = true }
 console_error_panic_hook = { version = "0.1", optional = true }
 wasm-bindgen = { version = "0.2", optional = true }
+pulldown-cmark = { version = "0.13.4", features = ["getopts", "html", "pulldown-cmark-escape"] }
+frontmatter = "0.4.0"
+serde = { version = "1.0.228", features = ["derive", "serde_derive", "std"] }
+serde_json = "1.0.150"
+chrono = { version = "0.4.45", features = ["alloc", "clock", "iana-time-zone", "js-sys", "now", "oldtime", "std", "wasm-bindgen", "wasmbind", "winapi", "windows-link"] }
+serde_yaml = "0.9.34"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros", "test-util"] }
+reqwest = { version = "0.12", features = ["json"] }
+tower = { version = "0.5" }
+axum-test = "16.0.0"
 
 [features]
-hydrate = [
-    "leptos/hydrate",
-    "dep:console_error_panic_hook",
-    "dep:wasm-bindgen",
-]
+hydrate = ["leptos/hydrate", "dep:console_error_panic_hook", "dep:wasm-bindgen"]
 ssr = [
     "dep:axum",
     "dep:tokio",

@@ -18,38 +18,42 @@ fn ProjectCard(
     repo_url: &'static str,
 ) -> impl IntoView {
     view! {
-        <article class="project-card">
-            <div class="project-card__header">
-                <span class="project-card__mission">{mission}</span>
-                <span class="project-card__indicator"></span>
-            </div>
-            <h3 class="project-card__title">{title}</h3>
-            <p class="project-card__desc">{description}</p>
-            <div class="project-card__stack">
-                <span class="project-card__stack-label">"STACK"</span>
-                <span class="project-card__stack-value">{stack}</span>
-            </div>
-            <div class="project-card__links">
-                {live_url.map(|url| view! {
+        <li style="list-style: none; display: contents;">
+            <article class="project-card" aria-labelledby=title>
+                <div class="project-card__header">
+                    <span class="project-card__mission">{mission}</span>
+                    <span class="project-card__indicator" aria-hidden="true"></span>
+                </div>
+                <h3 class="project-card__title" id=title>{title}</h3>
+                <p class="project-card__desc">{description}</p>
+                <div class="project-card__stack">
+                    <span class="project-card__stack-label">"STACK"</span>
+                    <span class="project-card__stack-value">{stack}</span>
+                </div>
+                <div class="project-card__links">
+                    {live_url.map(|url| view! {
+                        <a
+                            href=url
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-card__link project-card__link--live"
+                            aria-label=format!("View live deployment of {}", title)
+                        >
+                            "Live ↗"
+                        </a>
+                    })}
                     <a
-                        href=url
+                        href=repo_url
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="project-card__link project-card__link--live"
+                        class="project-card__link project-card__link--repo"
+                        aria-label=format!("View source code repository of {}", title)
                     >
-                        "Live ↗"
+                        "Repository ↗"
                     </a>
-                })}
-                <a
-                    href=repo_url
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card__link project-card__link--repo"
-                >
-                    "Repository ↗"
-                </a>
-            </div>
-        </article>
+                </div>
+            </article>
+        </li>
     }
 }
 
@@ -57,15 +61,15 @@ fn ProjectCard(
 #[component]
 pub fn Projects() -> impl IntoView {
     view! {
-        <section class="projects" id="projects">
+        <section class="projects" id="projects" aria-label="Environmental Intelligence Platforms">
             <div class="section__header">
                 <span class="section__label">"MISSION LOG"</span>
                 <h2 class="section__title">"Environmental Intelligence Platforms"</h2>
                 <p class="section__subtitle">
-                    "Production-grade satellite, geospatial, and ESG systems — designed, built, and deployed independently."
+                    "Production-grade satellite, geospatial, and ESG systems designed, built, and deployed independently."
                 </p>
             </div>
-            <div class="projects__grid">
+            <ul class="projects__grid" style="list-style: none; padding: 0; margin: 0;">
                 <ProjectCard
                     mission="MISSION 01"
                     title="Geo ESG A.E.C.O"
@@ -103,7 +107,21 @@ pub fn Projects() -> impl IntoView {
                     live_url="https://aeco.rizkiagustiawan.tech"
                     repo_url="https://github.com/rizkiagustiawan/geo-ntb-flood-ai"
                 />
-            </div>
+                <ProjectCard
+                    mission="MISSION 06"
+                    title="NTB Methane Tracker - Geo ESG A.E.C.O"
+                    description="Real-time geospatial methane tracker featuring 3D terrain-aware Gaussian Plume dispersion, satellite STAC fusion, and dMRV carbon credit reporting."
+                    stack="Rust, Axum, Tokio, PostGIS, Leaflet, Python, STAC API"
+                    repo_url="https://github.com/rizkiagustiawan/methane-spatial-monitor-ntb"
+                />
+                <ProjectCard
+                    mission="MISSION 07"
+                    title="Indonesian Environmental AI Agent"
+                    description="A comprehensive AI assistant providing 219 automated analytical tools for environmental engineering. Ensures strict compliance with Indonesian national regulations (PP 22/2021) across 20 domains."
+                    stack="Rust, Python, Model Context Protocol (MCP)"
+                    repo_url="https://github.com/rizkiagustiawan/env-indonesia-mcp"
+                />
+            </ul>
         </section>
     }
 }

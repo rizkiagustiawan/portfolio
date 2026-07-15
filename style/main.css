@@ -301,7 +301,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero__degree {
-  font-size: 0.5em;
+  font-size: 1em;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
@@ -441,6 +441,9 @@ img { max-width: 100%; display: block; }
   -webkit-backdrop-filter: blur(8px);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card::before {
@@ -533,6 +536,7 @@ img { max-width: 100%; display: block; }
 .project-card__links {
   display: flex;
   gap: 0.8rem;
+  margin-top: auto;
 }
 
 .project-card__link {
@@ -704,6 +708,7 @@ img { max-width: 100%; display: block; }
 
 .skills__certs {
   text-align: center;
+  margin-top: 2.5rem;
 }
 
 .skills__certs-title {
@@ -875,5 +880,53 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .hero__name { font-size: 1.8rem; }
   .hero__title { font-size: 0.95rem; }
-  .section__title { font-size: 1.4rem; }
+}
+
+/* --- BLOG CONTENT STYLING --- */
+.blog-content h1, .blog-content h2, .blog-content h3 {
+  color: var(--c-text-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: var(--c-text-secondary);
+}
+
+.blog-content ul, .blog-content ol {
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+  color: var(--c-text-secondary);
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+.blog-content pre {
+  background: var(--c-bg-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+  color: var(--c-accent);
+}
+
+.blog-content pre code {
+  color: #c9d1d9; 
+}
+
+.blog-content strong {
+  color: var(--c-text-primary);
+  font-weight: 600;
 }

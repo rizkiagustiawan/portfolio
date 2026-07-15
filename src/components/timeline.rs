@@ -20,8 +20,8 @@ fn TimelineEntry(
     };
 
     view! {
-        <div class=class>
-            <div class="timeline__marker">
+        <li class=class>
+            <div class="timeline__marker" aria-hidden="true">
                 <div class="timeline__dot"></div>
                 <div class="timeline__line"></div>
             </div>
@@ -30,7 +30,7 @@ fn TimelineEntry(
                 <h3 class="timeline__role">{role}</h3>
                 <p class="timeline__desc">{description}</p>
             </div>
-        </div>
+        </li>
     }
 }
 
@@ -38,7 +38,7 @@ fn TimelineEntry(
 #[component]
 pub fn Timeline() -> impl IntoView {
     view! {
-        <section class="timeline-section" id="timeline">
+        <section class="timeline-section" id="timeline" aria-label="Professional Experience">
             <div class="section__header">
                 <span class="section__label">"OPERATIONAL HISTORY"</span>
                 <h2 class="section__title">"Professional Experience"</h2>
@@ -46,29 +46,29 @@ pub fn Timeline() -> impl IntoView {
                     "A trajectory spanning environmental engineering, global supply chains, and distributed systems."
                 </p>
             </div>
-            <div class="timeline">
+            <ol class="timeline" style="list-style: none; padding: 0; margin: 0;">
                 <TimelineEntry
                     period="Mar 2026 – Present"
-                    role="Environmental Technology Developer (Satellite & AI Systems)"
+                    role="Environmental Intelligence Systems Developer"
                     description="Built four production-grade satellite platforms independently. Implemented Multi AI Agent Systems (CrewAI) for automated workflows."
                     active=true
                 />
                 <TimelineEntry
                     period="Mar 2024 – Feb 2026"
-                    role="Global Procurement & Scope 3 Supply Chain Analyst"
+                    role="International Sourcing & Supply Chain Research"
                     description="Managed cross-border procurement (China, US, Malaysia) with zero compliance violations."
                 />
                 <TimelineEntry
                     period="Mar 2021 – Feb 2026"
-                    role="ESG Technology Researcher & ReFi Protocol Engineer"
-                    description="Operated distributed node infrastructure for 5 years. Evaluated ReFi protocols for carbon credit verification."
+                    role="Blockchain Infrastructure Operator & Researcher"
+                    description="Operated distributed node infrastructure for 5 years. Conducted research on blockchain protocols and decentralized systems."
                 />
                 <TimelineEntry
                     period="Sep 2024 – Nov 2024"
-                    role="Environmental Engineer Intern — Dinas PUPR Provinsi NTB"
+                    role="Environmental Engineer Intern - Dinas PUPR Provinsi NTB"
                     description="Supervised leachate containment construction and conducted GIS compliance audits."
                 />
-            </div>
+            </ol>
         </section>
     }
 }
