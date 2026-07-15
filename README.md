@@ -1,6 +1,6 @@
-# Rizki Agustiawan — Portfolio
+# Rizki Agustiawan | Portfolio
 
-Environmental Engineer & ESG Intelligence Builder portfolio built with Rust, WebAssembly, and Leptos Server-Side Rendering (SSR).
+Environmental Engineer | GIS, Remote Sensing & ESG Analytics portfolio built with Rust, WebAssembly, and Leptos Server-Side Rendering (SSR).
 
 ## Features
 
