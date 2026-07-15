@@ -30,10 +30,10 @@ pub fn Hero() -> impl IntoView {
                 </p>
 
                 <p class="hero__summary">
-                    "Cross-disciplinary background spanning blockchain infrastructure operations, "
-                    "cross-border supply chain management, and a formal degree in Environmental Engineering "
-                    "(GPA 3.33/4.00, Universitas Teknologi Sumbawa). Focused on environmental intelligence systems, "
-                    "ESG automation, geospatial infrastructure, and Indonesia's Net Zero 2060 transition ecosystem."
+                    "Environmental Engineer specializing in GIS, Remote Sensing, and ESG Analytics. "
+                    "Combining a unique operational background in distributed infrastructure with high-performance "
+                    "Rust engineering to build production-grade spatial intelligence platforms and accelerate "
+                    "Indonesia's Net Zero 2060 transition."
                 </p>
 
                 <nav class="hero__actions" aria-label="Primary actions">
