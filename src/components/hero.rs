@@ -33,7 +33,7 @@ pub fn Hero() -> impl IntoView {
                     "Environmental Engineer specializing in GIS, Remote Sensing, and ESG Analytics. "
                     "Combining a unique operational background in distributed infrastructure with high-performance "
                     "Rust engineering to build production-grade spatial intelligence platforms and accelerate "
-                    "Indonesia's Net Zero 2060 transition through automated compliance systems."
+                    "Indonesia's Net Zero 2060 transition through automated data-driven compliance systems."
                 </p>
 
                 <nav class="hero__actions" aria-label="Primary actions">
